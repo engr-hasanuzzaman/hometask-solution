@@ -26,6 +26,10 @@ describe('isAnagram', function() {
     assert.equal(isAnagram(), false);
   });
 
+  it('should return false for passing single parameter', function() {
+    assert.equal(isAnagram("foo"), false);
+  });
+
   it('should return true for string "THis is Anagram" and "Ana gram this is"', function() {
     assert.equal(isAnagram("THis is Anagram", "Ana gram this is"), true);
   });
@@ -34,7 +38,7 @@ describe('isAnagram', function() {
     assert.equal(isAnagram("this-is-anagram", "is-this-anagram"), true);
   });
 
-  it('should return true for string হাসান and নহাসা', function() {
+  it('should return true for unicode string হাসান and নহাসা', function() {
     assert.equal(isAnagram("হাসান", "নহাসা"), true);
   });
 
