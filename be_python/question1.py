@@ -23,4 +23,15 @@ class Queue:
         return self.queue.pop(0)
 
     def size(self):
-        return len(self.queue)   
+        return len(self.queue)
+
+
+#
+# testing section
+#
+
+def inc(x):
+    return x + 1
+
+def test_answer():
+    assert inc(3) == 4
