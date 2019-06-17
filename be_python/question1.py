@@ -6,9 +6,17 @@ def is_dictionary(d):
   return type(d) is dict
 
 def calculateDepth(data):
-  result = []
+  if not is_dictionary(data):
+    return []
+
+  # leveling first level keys
+  result = leveling(data.keys(), 1)
+
   queue = Queue()
   return result
+
+def leveling(keys, level):
+  return [[key, level] for key in keys]
 
 class Queue:
     def __init__(self):
@@ -25,13 +33,14 @@ class Queue:
     def size(self):
         return len(self.queue)
 
+    def is_empty(self):
+      return len(self.queue) == 0
+
 
 #
 # testing section
 #
+single_level_dict = { "name": "Hasan", "age": 29, "passion": "programming"}
 
-def inc(x):
-    return x + 1
-
-def test_answer():
-    assert inc(3) == 4
+def test_single_level_traversing():
+  assert calculateDepth(single_level_dict) == [["name", 1], ["age", 1], ["passion", 1]]
