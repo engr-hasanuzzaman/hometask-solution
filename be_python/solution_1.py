@@ -1,5 +1,9 @@
+import factory_1  as factory
+
 def print_depth(data):
-  return False
+  print("calling print depth")
+  for d in calculateDepth(data):
+    print("{} {}".format(d[0], d[1]))
 # Write function body
 
 def is_dictionary(d):
@@ -36,11 +40,18 @@ class Queue:
     def is_empty(self):
       return len(self.queue) == 0
 
+if __name__ == '__main__':
+  print_depth(factory.second_level_dict)
 
 #
 # testing section
 #
-single_level_dict = { "name": "Hasan", "age": 29, "passion": "programming"}
 
 def test_single_level_traversing():
-  assert calculateDepth(single_level_dict) == [["name", 1], ["age", 1], ["passion", 1]]
+  assert calculateDepth(factory.single_level_dict) == [["name", 1], ["age", 1], ["passion", 1]]
+
+def test_non_dict_data():
+  assert calculateDepth(123) == []
+
+def test_empty_data():
+  assert calculateDepth(None) == []
