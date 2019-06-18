@@ -1,5 +1,5 @@
 import factory
-from utility import Queue, is_dictionary, leveling 
+from utility import get_dict, is_dictionariable, Queue, is_dictionary, leveling 
 
 def print_depth(data):
   for d in calculate_depth(data):
@@ -8,9 +8,10 @@ def print_depth(data):
 
 # use breath first search algorithm
 def calculate_depth(data):
-  if not is_dictionary(data):
+  if not is_dictionariable(data):
     return []
 
+  data = get_dict(data)
   # leveling first level keys
   result = leveling(data.keys(), 1)
 
@@ -22,7 +23,8 @@ def calculate_depth(data):
 
   while not queue.is_empty():
     elm, level = queue.dequeue()
-    if is_dictionary(elm):
+    if is_dictionariable(elm):
+      elm = get_dict(elm)
       result = result + leveling(elm.keys(), level)
       
       for val in elm.values():
@@ -33,7 +35,7 @@ def calculate_depth(data):
 # calling print_depth if this file is main file 
 #
 if __name__ == '__main__':
-  print_depth(factory.original_dict)
+  print_depth(factory.dict_with_object)
 
 #
 # testing section
@@ -68,3 +70,37 @@ def test_with_10th_level_dict():
     ["key10", 10]
   ]
 
+def test_dict_with_object():
+  assert calculate_depth(factory.dict_with_2nd_lev_object) == [
+    ["key1", 1],
+    ["key2", 1],
+    ["key3", 2],
+    ["key4", 2],
+    ["key5", 3],
+    ["user", 3],
+    ["first_name", 4],
+    ["last_name", 4],
+    ["father", 4],
+    ["first_name", 5],
+    ["last_name", 5],
+    ["father", 5]
+  ]
+
+def test_dict_with_3rd_level_object():
+  assert calculate_depth(factory.dict_with_3rd_lev_object) == [
+    ["key1", 1],
+    ["key2", 1],
+    ["key3", 2],
+    ["key4", 2],
+    ["key5", 3],
+    ["user", 3],
+    ["first_name", 4],
+    ["last_name", 4],
+    ["father", 4],
+    ["first_name", 5],
+    ["last_name", 5],
+    ["father", 5],
+    ["first_name", 6],
+    ["last_name", 6],
+    ["father", 6]
+  ]
