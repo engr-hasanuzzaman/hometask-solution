@@ -35,7 +35,7 @@ def calculate_depth(data):
 # calling print_depth if this file is main file 
 #
 if __name__ == '__main__':
-  print_depth(factory.dict_with_object)
+  print_depth(factory.dict_with_3rd_lev_object)
 
 #
 # testing section
