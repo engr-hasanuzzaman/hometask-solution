@@ -1,12 +1,10 @@
 import factory_1  as factory
+from utility import Queue, is_dictionary, leveling 
 
 def print_depth(data):
   for d in calculate_depth(data):
     print("{} {}".format(d[0], d[1]))
 # Write function body
-
-def is_dictionary(d):
-  return type(d) is dict
 
 # use breath first search algorithm
 def calculate_depth(data):
@@ -30,27 +28,6 @@ def calculate_depth(data):
       for val in elm.values():
         queue.enqueue((val, level + 1))
   return result
-
-def leveling(keys, level):
-  return [[key, level] for key in keys]
-
-class Queue:
-    def __init__(self):
-        self.queue = []
-
-    def enqueue(self, item):
-        self.queue.append(item)
-
-    def dequeue(self):
-        if len(self.queue) < 1:
-            return None
-        return self.queue.pop(0)
-
-    def size(self):
-        return len(self.queue)
-
-    def is_empty(self):
-      return len(self.queue) == 0
 
 #
 # calling print_depth if this file is main file 
