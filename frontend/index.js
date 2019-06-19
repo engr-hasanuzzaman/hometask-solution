@@ -1,4 +1,3 @@
-const add = require("./anagram/index.js")
+const isAnagram = require("./anagram/index.js")
 
-add(2, 4)
-console.log("running add(2,4) is", add(2,4))
+console.log(isAnagram("car", "rac"))
