@@ -5,7 +5,7 @@
 class Node(object):
   def __init__(self, value, parent=None):
     self.value = value
-    self.paren = parent
+    self.parent = parent
 
 n1 = Node(1)  
 n2 = Node(2, n1)
