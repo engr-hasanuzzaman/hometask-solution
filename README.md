@@ -34,4 +34,22 @@
 - run command `python solution_2.py` for running second solution
 - run command `python solution_3.py` for running third solution
 
-## Frontend Php Test 
+## Backend Php Test
+### Dependencies 
+- Php version `7.3.6` or higher (project is tested with php version is `7.3.6`)
+### Setup
+- Open your favourite terminal
+- Go the php backend project root folder that is `be_php`
+- make `phpunit` executable by running `chmod +x phpunit`
+### How to run the test coverage
+- First problem
+  - run `php -f solution_1.php`
+- Second problem
+  - run `pytest solution_2.py`
+- Third problem
+  - run `pytest solution_3.py`
+- N.B: Please see the corresponding file for inspecting test coverage
+### How to run the program
+- run command `php -f solution_1.php` for running first solution
+- run command `php -f solution_2.php` for running second solution
+- run command `php -f solution_3.php` for running third solution
