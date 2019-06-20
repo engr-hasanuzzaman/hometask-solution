@@ -1,3 +1,5 @@
 node_modules/
 .vscode/
 be_python/venv/
+be_python/__pycache__/
+be_python/.pytest_cache/
