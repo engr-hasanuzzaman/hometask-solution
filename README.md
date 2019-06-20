@@ -24,13 +24,11 @@
 ### How to run the test coverage
 - First problem
   - run `pytest solution_1.py`
-  - N.B: You will find all the test coverage on the below section on solution_1.py file
 - Second problem
   - run `pytest solution_2.py`
-  - N.B: You will find all the test coverage on the below section on solution_2.py file
 - Third problem
   - run `pytest solution_3.py`
-  - N.B: You will find all the test coverage on the below section on solution_3.py file
+- N.B: Please see the corresponding file for inspecting test coverage
 ### How to run the program
 - run command `python solution_1.py` for running first solution
 - run command `python solution_2.py` for running second solution
