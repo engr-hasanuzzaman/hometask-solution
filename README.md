@@ -7,11 +7,13 @@
 - Open your favourite terminal
 - Go the frontend project root folder that is `frontend`
 - install all the dependencies using command `npm install`
-### How to run the test coverage
+### How to run the test coverage (solution 1)
 - run command `npm run-script test`
 - N.B: Please inspect the test folder under frontend to see the test coverage
-### How to run the program
+### How to run the program (solution 1)
 - run command `npm run-script exec`
+
+### For questions 2 and 3, please see the file solution2.md and solution3.md respectively
 
 ## Backend Python Test
 ### Dependencies 
